@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="切水果：滑動切開飛來的水果，躲开炸彈。純前端 Playgrounds SAM。"
+    />
+    <title>切水果</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <h1>切水果</h1>
+        <p class="tagline">滑切飛果 · 果汁飛濺 · 自製音效</p>
+      </header>
+
+      <section class="meter" aria-label="對局狀態">
+        <div class="meter-item">
+          <span class="label">分數</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="meter-item">
+          <span class="label">時間</span>
+          <strong id="time">60</strong>
+        </div>
+        <div class="meter-item">
+          <span class="label">命</span>
+          <strong id="lives">3</strong>
+        </div>
+        <div class="meter-item">
+          <span class="label">連切</span>
+          <strong id="combo">0</strong>
+        </div>
+        <div class="meter-actions">
+          <button type="button" id="btn-mute" class="secondary" aria-pressed="true">
+            音效開
+          </button>
+        </div>
+      </section>
+
+      <div class="stage">
+        <canvas
+          id="game"
+          width="480"
+          height="640"
+          role="img"
+          aria-label="切水果遊戲區，在畫布上滑動切開水果"
+        ></canvas>
+      </div>
+
+      <p id="status" class="status" role="status">點「開始」進入 60 秒對局</p>
+
+      <div class="controls sticky-bar">
+        <button type="button" id="btn-start">開始</button>
+        <button type="button" id="btn-reset" class="secondary">重來</button>
+      </div>
+
+      <p class="hint">
+        在畫布上滑動切開水果加分；切到炸彈扣一命。連切可疊加分數。剩 3 命 · 限時 60
+        秒。點一下頁面後音效才會出聲。
+      </p>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
